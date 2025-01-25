@@ -1,3 +1,5 @@
+import * as inputHandler from "./inputHandler.js"
+
 const form: HTMLFormElement = document.querySelector("#inputForm") as HTMLFormElement;
 
 form.addEventListener("submit", (event: any) => {
@@ -9,4 +11,9 @@ form.addEventListener("submit", (event: any) => {
     if (input.value.trim() == "") {
         alert("Please enter notes or information in the text area");
     }
+
+    window.location.href = "../routes/cards.html";
+
+    let questions: string = inputHandler.generateQuestions();
+    inputHandler.writeQuestions(questions);
 });
