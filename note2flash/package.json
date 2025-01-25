@@ -4,8 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "npx tsc",
-    "dev": "npx tsc && npx http-server"
+    "compile": "npx tsc"
   },
   "author": "",
   "license": "ISC",
