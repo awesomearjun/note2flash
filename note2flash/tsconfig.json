@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es2016",
-    "module": "ESNext",
+    "target": "ESNext",
+    "module": "NodeNext",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
     "outDir": "./src/js",
-    "rootDir": "./src/ts"
+    "rootDir": "./src/ts",
+    "moduleResolution": "nodenext",
+    "alwaysStrict": true
   }
 }

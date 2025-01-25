@@ -10,9 +10,11 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/node": "^22.10.10",
     "typescript": "^5.7.3"
   },
   "dependencies": {
+    "fs": "^0.0.1-security",
     "http-server": "^14.1.1"
   }
 }

@@ -5,6 +5,7 @@ form.addEventListener("submit", (event: any) => {
 
     const input: HTMLTextAreaElement = document.querySelector("#textInput") as HTMLTextAreaElement;
 
+    // If the input is blank (including whitespace)
     if (input.value.trim() == "") {
         alert("Please enter notes or information in the text area");
     }
