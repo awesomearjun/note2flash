@@ -3,6 +3,7 @@ import * as inputHandler from "./inputHandler.js";
 const wrapper: HTMLDivElement = document.querySelector("#questionCards") as HTMLDivElement;
 const questions: inputHandler.Question[] = inputHandler.parseJSON();
 
+let id = 1;
 questions.forEach((question: inputHandler.Question) => {
     let questionId: HTMLParagraphElement = document.createElement("p");
     questionId.textContent = `${question.id}`;
@@ -20,6 +21,7 @@ questions.forEach((question: inputHandler.Question) => {
 
         let optionRadio: HTMLInputElement = document.createElement("input");
         optionRadio.value = JSON.stringify(option);
+        optionRadio.name = `question${id}`;
         console.log(option);
 
         optionRadio.type = "radio";
@@ -34,6 +36,7 @@ questions.forEach((question: inputHandler.Question) => {
         document.body.appendChild(document.createElement("br"));
     });
 
+    id++;
 });
 
 document.body.appendChild(document.createElement("br"));

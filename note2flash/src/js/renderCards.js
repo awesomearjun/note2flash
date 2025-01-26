@@ -1,6 +1,7 @@
 import * as inputHandler from "./inputHandler.js";
 const wrapper = document.querySelector("#questionCards");
 const questions = inputHandler.parseJSON();
+let id = 1;
 questions.forEach((question) => {
     let questionId = document.createElement("p");
     questionId.textContent = `${question.id}`;
@@ -14,6 +15,7 @@ questions.forEach((question) => {
         let name = Object.keys(option)[0];
         let optionRadio = document.createElement("input");
         optionRadio.value = JSON.stringify(option);
+        optionRadio.name = `question${id}`;
         console.log(option);
         optionRadio.type = "radio";
         optionRadio.classList.add("option");
@@ -24,6 +26,7 @@ questions.forEach((question) => {
         document.body.appendChild(optionDescription);
         document.body.appendChild(document.createElement("br"));
     });
+    id++;
 });
 document.body.appendChild(document.createElement("br"));
 document.body.appendChild(document.createElement("br"));
