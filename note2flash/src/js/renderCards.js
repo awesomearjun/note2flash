@@ -1,4 +1,33 @@
 import * as inputHandler from "./inputHandler.js";
-let jsonP = document.querySelector("#jsonP");
-jsonP.textContent = `${JSON.stringify(inputHandler.parseJSON())}`;
-console.table(inputHandler.parseJSON());
+const wrapper = document.querySelector("#questionCards");
+const questions = inputHandler.parseJSON();
+questions.forEach((question) => {
+    let questionId = document.createElement("p");
+    questionId.textContent = `${question.id}`;
+    questionId.id = "questionID";
+    let questionName = document.createElement("h3");
+    questionName.textContent = `${question.question}`;
+    questionName.id = "questionName";
+    document.body.appendChild(questionId);
+    document.body.appendChild(questionName);
+    question.options.forEach((option) => {
+        let name = Object.keys(option)[0];
+        let optionRadio = document.createElement("input");
+        optionRadio.value = JSON.stringify(option);
+        console.log(option);
+        optionRadio.type = "radio";
+        optionRadio.classList.add("option");
+        let optionDescription = document.createElement("label");
+        optionDescription.textContent = name;
+        optionDescription.htmlFor = optionRadio.value;
+        document.body.appendChild(optionRadio);
+        document.body.appendChild(optionDescription);
+        document.body.appendChild(document.createElement("br"));
+    });
+});
+document.body.appendChild(document.createElement("br"));
+document.body.appendChild(document.createElement("br"));
+let submit = document.createElement("button");
+submit.type = "submit";
+submit.textContent = "Submit";
+document.body.appendChild(submit);
