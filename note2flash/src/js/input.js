@@ -7,7 +7,9 @@ form.addEventListener("submit", (event) => {
     if (input.value.trim() == "") {
         alert("Please enter notes or information in the text area");
     }
-    window.location.href = "../routes/cards.html";
-    let questions = inputHandler.generateQuestions();
-    inputHandler.writeQuestions(questions);
+    else {
+        window.location.href = "../routes/cards.html";
+        let questions = inputHandler.generateQuestions();
+        inputHandler.writeQuestions(questions);
+    }
 });

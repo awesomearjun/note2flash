@@ -10,10 +10,11 @@ form.addEventListener("submit", (event: any) => {
     // If the input is blank (including whitespace)
     if (input.value.trim() == "") {
         alert("Please enter notes or information in the text area");
+    } else {
+        window.location.href = "../routes/cards.html";
+
+        let questions: string = inputHandler.generateQuestions();
+        inputHandler.writeQuestions(questions);
     }
 
-    window.location.href = "../routes/cards.html";
-
-    let questions: string = inputHandler.generateQuestions();
-    inputHandler.writeQuestions(questions);
 });

@@ -44,3 +44,6 @@ export function parseJSON() {
     const questions = JSON.parse(localStorage.getItem("json") || '{}');
     return questions;
 }
+export function getAnswer(questionObject) {
+    return questionObject.options[0];
+}

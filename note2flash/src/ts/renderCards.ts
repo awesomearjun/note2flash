@@ -13,8 +13,8 @@ questions.forEach((question: inputHandler.Question) => {
     questionName.textContent = `${question.question}`;
     questionName.id = "questionName";
 
-    document.body.appendChild(questionId)
-    document.body.appendChild(questionName);
+    wrapper.appendChild(questionId)
+    wrapper.appendChild(questionName);
 
     question.options.forEach((option: any) => {
         let name: string = Object.keys(option)[0];
@@ -22,7 +22,6 @@ questions.forEach((question: inputHandler.Question) => {
         let optionRadio: HTMLInputElement = document.createElement("input");
         optionRadio.value = JSON.stringify(option);
         optionRadio.name = `question${id}`;
-        console.log(option);
 
         optionRadio.type = "radio";
         optionRadio.classList.add("option");
@@ -31,19 +30,21 @@ questions.forEach((question: inputHandler.Question) => {
         optionDescription.textContent = name;
         optionDescription.htmlFor = optionRadio.value;
 
-        document.body.appendChild(optionRadio);
-        document.body.appendChild(optionDescription);
-        document.body.appendChild(document.createElement("br"));
+        optionDescription.classList.add("optionName");
+
+        wrapper.appendChild(optionRadio);
+        wrapper.appendChild(optionDescription);
+        wrapper.appendChild(document.createElement("br"));
     });
 
     id++;
 });
 
-document.body.appendChild(document.createElement("br"));
-document.body.appendChild(document.createElement("br"));
+wrapper.appendChild(document.createElement("br"));
+wrapper.appendChild(document.createElement("br"));
 
 let submit: HTMLButtonElement = document.createElement("button");
 submit.type = "submit";
 submit.textContent = "Submit";
 
-document.body.appendChild(submit);
+wrapper.appendChild(submit);

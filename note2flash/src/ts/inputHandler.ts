@@ -1,7 +1,12 @@
 export interface Question {
   id: number;
   question: string;
-  options: [string, boolean];
+  options: Map<string, number>[];
+}
+
+export interface Answer {
+  questionID: number;
+  answer: string;
 }
 
 // Take input and use chatgpt api to generate questions
@@ -54,4 +59,8 @@ export function parseJSON(): Question[] {
   const questions: Question[] = JSON.parse(localStorage.getItem("json") || '{}') as Question[];
 
   return questions;
+}
+
+export function getAnswer(questionObject: Question): any {
+  return questionObject.options[0];
 }
